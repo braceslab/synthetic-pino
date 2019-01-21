@@ -10,7 +10,14 @@ const spino = function (options) {
         }
       }
     }
+
     this.child = function () { return this }
+
+    Object.defineProperty(this, 'level', {
+      set: function (value) { __pino.level = value },
+      get: function () { return __pino.level }
+    })
+
     for (const _prop in __pino) {
       if (!this[_prop]) {
         this[_prop] = __pino[_prop]

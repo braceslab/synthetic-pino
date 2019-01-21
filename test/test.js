@@ -10,3 +10,6 @@ const log = spino({
 log.trace('trace')
 log.info('info')
 log.panic('panic')
+
+log.level = 'trace'
+log.trace('trace')
