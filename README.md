@@ -1,7 +1,7 @@
 
 (work in progress)
 
-behave as pino logger but use only console log
+behave like pino logger but use only console log
 
 ```js
 const options = {
