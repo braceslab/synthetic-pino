@@ -9,7 +9,7 @@ const log = spino({
 
 log.trace('trace')
 log.info('info', {a: { message: 'message' }})
-log.panic('panic')
+log.panic('panic', function bye (lang) { return 'ciao' })
 
 log.level = 'trace'
 log.trace('trace')

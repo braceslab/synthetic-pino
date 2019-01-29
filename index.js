@@ -10,7 +10,7 @@ const print = function (...args) {
         message = '[INVALID-JSON]'
       }
     } else if (typeof message === 'function') {
-      message = message()
+      message = message.name
     }
     return message
   })
