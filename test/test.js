@@ -8,7 +8,7 @@ const log = spino({
 })
 
 log.trace('trace')
-log.info('info')
+log.info('info', {a: { message: 'message' }})
 log.panic('panic')
 
 log.level = 'trace'

@@ -1,4 +1,21 @@
 const pino = require('pino')
+const stringify = require('json-stringify-extended')
+
+const print = function (...args) {
+  const message = args.map((message) => {
+    if (typeof message === 'object') {
+      try {
+        message = stringify(message, stringify.options.compact)
+      } catch (e) {
+        message = '[INVALID-JSON]'
+      }
+    } else if (typeof message === 'function') {
+      message = message()
+    }
+    return message
+  })
+  console.log(...message)
+}
 
 const spino = function (options) {
   return (new function (options) {
@@ -6,7 +23,7 @@ const spino = function (options) {
     for (const level in __pino.levels.values) {
       this[level] = function (...args) {
         if (__pino.isLevelEnabled(level)) {
-          console.log(...args)
+          print(...args)
         }
       }
     }
