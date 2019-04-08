@@ -27,6 +27,9 @@ const spino = function (options) {
             .map(line => line.trim())
         }
       }
+      if (options.limit && value.length > options.limit) {
+        value = value.substr(0, options.limit)
+      }
       if (!options.replace) {
         return {key, value}
       }

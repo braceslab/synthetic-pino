@@ -8,7 +8,8 @@ const options = {
   customLevels: {
     panic: 100,
     success: 35
-  }
+  },
+  limit: 512 // truncate long values at 
 }
 
 let log

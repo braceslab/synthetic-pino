@@ -1,6 +1,6 @@
 {
   "name": "synthetic-pino",
-  "version": "0.3.0-beta",
+  "version": "0.3.1-beta",
   "description": "behave like pino logger but use only console log",
   "main": "index.js",
   "scripts": {
